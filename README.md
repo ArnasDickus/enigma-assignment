@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Code-Life
+
+Code-life react multi page application using bootstrap. This project can't be hosted on github because it uses routing. However I decided to host it on my second domain.
+
+Live version [here](https://arnasdickus.github.io/travel-site/).
 
 ## Available Scripts
 
@@ -66,4 +70,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-"# enigma-assignment" 
+"# code-life" 
