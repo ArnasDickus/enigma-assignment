@@ -8,34 +8,35 @@ class Register extends Component {
     this.state = {
       email: '',
       password: '',
-      data: {
-        email: '',
-        password: '',
-      },
     }
 
-/*
-  Take inputs Done
-  Put inputs in local storage and allow to push it into it.
-*/
     // This binding is necessary to make `this` work in the callback 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.storeData = this.storeData.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
 
   }
 
-  onChange = (event) => {
+  
+  handleEmailChange = (event) =>{
     this.setState({
-      [event.target.name]: event.target.value
+      email: event.target.value,
     })
   }
-
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value,
+    })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.storeData();
+
     console.log(this.state);
-  // Reset form;
+
+    // Reset form;
     this.setState({
       email: '',
       password: '',
@@ -43,8 +44,33 @@ class Register extends Component {
   }
 
   storeData = () => {
-    localStorage.setItem('data', JSON.stringify(this.state.data));
+
+
+    // Get that item from local storage.
+    if(localStorage.getItem("data") === null){
+            let localStorageArray = [];
+            localStorageArray.push(this.state);
+            localStorage.setItem('data', JSON.stringify(localStorageArray));
+    }else{
+        let localStorageArray = JSON.parse(localStorage.getItem("data"));
+        localStorageArray.push(this.state);
+        localStorage.setItem("data", JSON.stringify(localStorageArray));
+    }
   }
+  
+   /*
+-------------------------------------------------------------------------------------------------------------------------------------------
+   Problem that my data is getting overwritten. I need to check it.
+   Create a object data where you could put state
+
+   1) Check out stack overflow answer DONE
+   2) I did my example. didn't worked DONE
+   3) Watch tutorial about local storage https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2 Not relevant saves only one value
+   4) Watch second tutorial https://alligator.io/js/introduction-localstorage-sessionstorage/
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+  */
 
 
   render() {
@@ -54,13 +80,12 @@ class Register extends Component {
         <Form >
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-             {/* <Form.Control value = {this.state.email} onChange = {this.handleEmailChange} type="email" placeholder="Enter email" />  */}
              <Form.Control 
-             name = "email"
-             value = {this.state.email} 
-             onChange = {event => this.onChange(event)} 
-             type="email" 
-             placeholder="Enter email" />
+            name = "email"
+            value = {this.state.email} 
+            onChange = {this.handleEmailChange}
+            type="email" 
+            placeholder="Enter email" />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
@@ -68,20 +93,18 @@ class Register extends Component {
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-             {/* <Form.Control value = {this.state.password} onChange = {this.handlePasswordChange} type="password" placeholder="Password" />  */}
              <Form.Control 
              name = "password"
              value = {this.state.password} 
-             onChange = {event => this.onChange(event)} 
-             type="password" 
-             placeholder="Password" /> 
+            onChange = {this.handlePasswordChange}
+            type="password" 
+            placeholder="Password" /> 
           </Form.Group>
           <Button onClick = {this.handleSubmit} variant="primary" type="submit">
             Submit
           </Button>
           </Form>
-    </Container>
-        
+    </Container>  
     )
   }
 }
