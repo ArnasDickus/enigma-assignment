@@ -65,6 +65,7 @@ class Register extends Component {
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
              <Form.Control 
+            autoComplete="email" required
             name = "email"
             value = {this.state.email} 
             onChange = {this.handleEmailChange}
@@ -78,6 +79,7 @@ class Register extends Component {
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
              <Form.Control 
+             autoComplete="password" required
              name = "password"
              value = {this.state.password} 
             onChange = {this.handlePasswordChange}

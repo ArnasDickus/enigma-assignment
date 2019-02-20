@@ -36,7 +36,16 @@ serviceWorker.unregister();
 
    DISPLAY
    1) Display values somehow. Check tutorial Watch tutorial about local storage https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2 Not relevant saves only one value
-   2) Display values somehow. Check this tutorial https://stackoverflow.com/questions/43668808/render-data-from-localstorage-with-react Suceeded finally
-   3) Stylize values
+   2) Display values somehow. Check this tutorial https://stackoverflow.com/questions/43668808/render-data-from-localstorage-with-react https://gist.github.com/idjuradj/575ba66981cccbfae23486cc3e047fac Suceeded finally
+   3) Stylize buttons. DONE
+   4) If I click button Delete delete Item
+      4.1) Problem is my DisplayList component is stateless. I need to convert it 
+      with classes. So that I could use states for it. Success
+      4.2) Select button delete. Done
+      4.3) Select data from local storage. Compare it with current data and delete it. Done
+      4.4) Delete button. data.splice(index, 1) It works, but I need to refresh to see effect. DONE
+      4.5) Delete button that effect would be immediate. 1) Tried this.state = {data: data} and setState but didn't worked
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------
   */

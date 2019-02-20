@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container } from 'react-bootstrap';
 import {DisplayList} from './DisplayList';
 
+
 class Display extends Component {
   constructor(props){
     let data = JSON.parse(localStorage.getItem('data'));
@@ -13,7 +14,7 @@ class Display extends Component {
   // Methods
   this.displayValues = this.displayValues.bind(this);
   }
-
+  
   displayValues(){
    return this.state.data.map((data1, index) =>
     <DisplayList
@@ -22,6 +23,7 @@ class Display extends Component {
       password = {data1.password}
        /> 
     )
+    
   }
   render() {
     return (

@@ -57,6 +57,7 @@ class Login extends Component {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control 
+              autoComplete="email" required
               name = "email"
               type="email" 
               placeholder="Enter email"
@@ -71,6 +72,7 @@ class Login extends Component {
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control 
+              autoComplete="email" required
               name = "password"
               type="password" 
               placeholder="Password"
