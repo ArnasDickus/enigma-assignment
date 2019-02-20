@@ -37,12 +37,6 @@ class Login extends Component {
     let isSuccessful = false;
 
     for (let index = 0; index < data.length; index++) {
-      console.log("this.state.email " + this.state.email);
-      console.log("this.state.password " + this.state.password);
-
-      console.log('data[index].email ' + data[index].email);
-      console.log('data[index].password ' + data[index].password);
-
       if(this.state.email === data[index].email &&
        this.state.password === data[index].password){
           isSuccessful = true;
