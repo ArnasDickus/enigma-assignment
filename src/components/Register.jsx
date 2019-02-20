@@ -57,25 +57,9 @@ class Register extends Component {
         localStorage.setItem("data", JSON.stringify(localStorageArray));
     }
   }
-  
-   /*
--------------------------------------------------------------------------------------------------------------------------------------------
-   Problem that my data is getting overwritten. I need to check it.
-   Create a object data where you could put state
-
-   1) Check out stack overflow answer DONE
-   2) I did my example. didn't worked DONE
-   3) Watch tutorial about local storage https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2 Not relevant saves only one value
-   4) Watch second tutorial https://alligator.io/js/introduction-localstorage-sessionstorage/
-
-
--------------------------------------------------------------------------------------------------------------------------------------------
-  */
-
-
   render() {
     return (
-    <Container >
+    <Container className = "mt-3" >
       <h2>Registration Form</h2>
         <Form >
           <Form.Group controlId="formBasicEmail">

@@ -7,7 +7,7 @@ import {Container} from "react-bootstrap";
 class Home extends Component {
 render() {
     return (
-        <Container>
+        <Container className = "mt-3">
            This is home page
         </Container>
         )
