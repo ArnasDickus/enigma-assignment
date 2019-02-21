@@ -60,6 +60,8 @@ serviceWorker.unregister();
       5.4) I was able to change email and password But I run into 2 problems
          1) Edit button changes only first element instead of selected element.
          2) this.state also adds show: true which it shouldn't do. Slice properties https://medium.freecodecamp.org/lets-clear-up-the-confusion-around-the-slice-splice-split-methods-in-javascript-8ba3266c29ae
+         3) Unable to edit button.
+   6) Added verification for Register.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------

@@ -40,13 +40,11 @@ export class DisplayList extends Component {
         for (let index = 0; index < data.length; index++) {
           if( this.props.email === data[index].email &&
               this.props.password === data[index].password){
-               console.log(...data);
-               console.log(this.props.email);
-               console.log(data[index].email)
+
         }
       }
-          localStorage.setItem('data', JSON.stringify(data));
-          this.props.updateList(data);
+          // localStorage.setItem('data', JSON.stringify(data));
+          // this.props.updateList(data);
     }
     handleDelete(){
         let data = JSON.parse(localStorage.getItem('data'));

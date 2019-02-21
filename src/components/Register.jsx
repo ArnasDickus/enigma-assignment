@@ -15,10 +15,28 @@ class Register extends Component {
     this.storeData = this.storeData.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.loginAuthentication = this.loginAuthentication.bind(this);
 
   }
 
-  
+  loginAuthentication = () => {
+
+    if(!this.state.email || !this.state.password){
+      alert('Please fill in the form');
+      return false;
+    }
+    
+    let data = JSON.parse(localStorage.getItem('data'));
+    for (let index = 0; index < data.length; index++) {
+      if(this.state.email === data[index].email){
+        alert('This Email already exist');
+        return false
+      }
+    }
+
+
+    return true;
+  }
   handleEmailChange = (event) =>{
     this.setState({
       email: event.target.value,
@@ -32,9 +50,10 @@ class Register extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.storeData();
-
-    console.log(this.state);
+    if(this.loginAuthentication()){
+      this.storeData();
+    }
+    
 
     // Reset form;
     this.setState({
