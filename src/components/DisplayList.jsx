@@ -1,18 +1,46 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap';
+import {Button, Modal, Form} from 'react-bootstrap';
 
 
 export class DisplayList extends Component {
     
     constructor(props){
         super(props)
-
+        this.state = {
+            email: '',
+            password: '',
+            show: false,
+        };
 
         // Methods
         this.handleDelete = this.handleDelete.bind(this);
+        this.onChange = this.onChange.bind(this);
+        // Edit Modal
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
-    
+    onChange(event){
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    };
+    handleClose(){
+        this.setState({show: false});
+    }
+    handleShow(){
+        this.setState({show: true});
+    }
+    handleEdit(event){
+        event.preventDefault();
+        this.setState({show: false});
+
+        const data = JSON.parse(localStorage.getItem('data'));
+        console.log(data);
+
+        console.log(this.state);
+    }
     handleDelete(){
         const data = JSON.parse(localStorage.getItem('data'));
         for (let index = 0; index < data.length; index++) {
@@ -25,6 +53,7 @@ export class DisplayList extends Component {
         this.props.updateList(data);
     }
 
+
   render() {
     return (
     <div className = "mt-4">
@@ -33,9 +62,48 @@ export class DisplayList extends Component {
             <br /> 
             Password: {this.props.password}
             <br /> 
-            <Button variant = "info mr-4 mt-1">Edit</Button>
+            <Button onClick = {this.handleShow} variant = "info mr-4 mt-1">Edit</Button>
             <Button onClick = {this.handleDelete} variant = "danger mt-1">Delete</Button>
-        </li>  
+        </li>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Edit Form</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+                <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control 
+                autoComplete="email" required
+                name = "email"
+                type="email" 
+                placeholder="Enter email"
+                value = {this.state.email}
+                onChange = {event => this.onChange(event)}
+                />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control 
+                autoComplete="email" required
+                name = "password"
+                type="password" 
+                placeholder="Password"
+                value = {this.state.password}
+                onChange = {event => this.onChange(event)}
+                />
+                </Form.Group>
+          </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={this.handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={this.handleEdit}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
     </div>
     )
   }

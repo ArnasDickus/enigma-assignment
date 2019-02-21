@@ -46,7 +46,17 @@ serviceWorker.unregister();
       4.4) Delete button. data.splice(index, 1) It works, but I need to refresh to see effect. DONE
       4.5) Delete button that effect would be immediate. 1) Tried this.state = {data: data} and setState but didn't worked
       4.6) Couldn't figure it out. Asked on stackOverflow. Found answer thanks stack overflow  https://stackoverflow.com/questions/54805428/re-render-react-component-after-i-deleted-from-local-storage/54805729#54805729
-      
+   5) If I click button Edit Modal appears. Allows me to input data, and save it.    
+      5.1) If I click on Edit show modal. DONE https://react-bootstrap.github.io/components/modal/
+      5.2) Create Form inputs where you could input data. DONE
+      5.3) Compare local storage data with current data.
+         We have 3 values:
+          Local storage values. Have access to it.
+          Edited values: have access to it no problem.
+          Current values: no access.
+          If I click edit. and save changes how to know which local storage
+          value to change.
+      5.4) Overwrite local storage data input data
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
