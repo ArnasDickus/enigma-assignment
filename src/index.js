@@ -46,7 +46,7 @@ serviceWorker.unregister();
       4.4) Delete button. data.splice(index, 1) It works, but I need to refresh to see effect. DONE
       4.5) Delete button that effect would be immediate. 1) Tried this.state = {data: data} and setState but didn't worked
       4.6) Couldn't figure it out. Asked on stackOverflow. Found answer thanks stack overflow  https://stackoverflow.com/questions/54805428/re-render-react-component-after-i-deleted-from-local-storage/54805729#54805729
-      4.7) BUG Itterator is not working. Selecting and deleting first element instead of selected.
+      4.7) BUG Itterator is not working. Selecting and deleting first element instead of selected. Thanks Stackoverflow https://stackoverflow.com/questions/54809828/how-to-delete-selected-element-react/54809872#54809872
    5) If I click button Edit Modal appears. Allows me to input data, and save it.    
       5.1) If I click on Edit show modal. DONE https://react-bootstrap.github.io/components/modal/
       5.2) Create Form inputs where you could input data. DONE
@@ -59,7 +59,7 @@ serviceWorker.unregister();
           value to change.
       5.4) I was able to change email and password But I run into 2 problems
          1) Edit button changes only first element instead of selected element.
-         2) this.state also adds show: true which it shouldn't do.
+         2) this.state also adds show: true which it shouldn't do. Slice properties https://medium.freecodecamp.org/lets-clear-up-the-confusion-around-the-slice-splice-split-methods-in-javascript-8ba3266c29ae
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------

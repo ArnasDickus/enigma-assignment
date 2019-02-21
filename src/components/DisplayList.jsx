@@ -40,22 +40,26 @@ export class DisplayList extends Component {
         for (let index = 0; index < data.length; index++) {
           if( this.props.email === data[index].email &&
               this.props.password === data[index].password){
-                data.splice(data[index], 1, this.state);
+               console.log(...data);
+               console.log(this.props.email);
+               console.log(data[index].email)
         }
       }
           localStorage.setItem('data', JSON.stringify(data));
           this.props.updateList(data);
     }
     handleDelete(){
-        const data = JSON.parse(localStorage.getItem('data'));
+        let data = JSON.parse(localStorage.getItem('data'));
         for (let index = 0; index < data.length; index++) {
             if(this.props.email === data[index].email &&
                 this.props.password === data[index].password){
-                  console.log(this.props.email);
-                  console.log(data[index]);
-                data.splice(data[index], 1);
+
+                data = [
+                  ...data.slice(0, index),
+                  ...data.slice(index + 1)
+                ];
+                
             }
-            console.log('loop count');
         }
         localStorage.setItem('data', JSON.stringify(data));
         this.props.updateList(data);
