@@ -51,8 +51,11 @@ export class DisplayList extends Component {
         for (let index = 0; index < data.length; index++) {
             if(this.props.email === data[index].email &&
                 this.props.password === data[index].password){
+                  console.log(this.props.email);
+                  console.log(data[index]);
                 data.splice(data[index], 1);
             }
+            console.log('loop count');
         }
         localStorage.setItem('data', JSON.stringify(data));
         this.props.updateList(data);
