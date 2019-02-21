@@ -45,6 +45,8 @@ serviceWorker.unregister();
       4.3) Select data from local storage. Compare it with current data and delete it. Done
       4.4) Delete button. data.splice(index, 1) It works, but I need to refresh to see effect. DONE
       4.5) Delete button that effect would be immediate. 1) Tried this.state = {data: data} and setState but didn't worked
+      4.6) Couldn't figure it out. Asked on stackOverflow. Found answer thanks stack overflow  https://stackoverflow.com/questions/54805428/re-render-react-component-after-i-deleted-from-local-storage/54805729#54805729
+      
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------

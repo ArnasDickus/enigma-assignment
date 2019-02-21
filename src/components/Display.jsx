@@ -21,9 +21,16 @@ class Display extends Component {
       key = {index}
       email = {data1.email}
       password = {data1.password}
+      updateList = {this.updateList}
        /> 
     )
     
+  }
+  // This is the method that will be called from the child component.
+  updateList = (data) => {
+    this.setState({
+      data
+    });
   }
   render() {
     return (

@@ -3,6 +3,7 @@ import {Button} from 'react-bootstrap';
 
 
 export class DisplayList extends Component {
+    
     constructor(props){
         super(props)
 
@@ -14,7 +15,6 @@ export class DisplayList extends Component {
     
     handleDelete(){
         const data = JSON.parse(localStorage.getItem('data'));
-        console.log(data);
         for (let index = 0; index < data.length; index++) {
             if(this.props.email === data[index].email &&
                 this.props.password === data[index].password){
@@ -22,6 +22,7 @@ export class DisplayList extends Component {
             }
         }
         localStorage.setItem('data', JSON.stringify(data));
+        this.props.updateList(data);
     }
 
   render() {
