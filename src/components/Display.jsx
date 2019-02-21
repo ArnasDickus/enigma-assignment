@@ -16,6 +16,7 @@ class Display extends Component {
   }
   
   displayValues(){
+
    return this.state.data.map((data1, index) =>
     <DisplayList
       key = {index}

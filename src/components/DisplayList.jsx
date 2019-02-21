@@ -35,11 +35,16 @@ export class DisplayList extends Component {
     handleEdit(event){
         event.preventDefault();
         this.setState({show: false});
+        let data = JSON.parse(localStorage.getItem('data'));
 
-        const data = JSON.parse(localStorage.getItem('data'));
-        console.log(data);
-
-        console.log(this.state);
+        for (let index = 0; index < data.length; index++) {
+          if( this.props.email === data[index].email &&
+              this.props.password === data[index].password){
+                data.splice(data[index], 1, this.state);
+        }
+      }
+          localStorage.setItem('data', JSON.stringify(data));
+          this.props.updateList(data);
     }
     handleDelete(){
         const data = JSON.parse(localStorage.getItem('data'));
