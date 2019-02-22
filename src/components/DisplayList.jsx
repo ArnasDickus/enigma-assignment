@@ -37,26 +37,35 @@ export class DisplayList extends Component {
         this.setState({show: false});
         let data = JSON.parse(localStorage.getItem('data'));
 
-        for (let index = 0; index < data.length; index++) {
-          if( this.props.email === data[index].email &&
-              this.props.password === data[index].password){
-
-        }
-      }
-          // localStorage.setItem('data', JSON.stringify(data));
-          // this.props.updateList(data);
+        data.map((value) => {
+          if(value.email === this.props.email && 
+            value.password === this.props.password){
+              console.log(value);
+              console.log(this.state.email);
+              console.log(this.state.password);
+              return {
+                ...value,
+                email: this.state.email,
+                password: this.state.password,
+              }
+             
+          }
+          console.log(value);
+          return value;
+        })
+        localStorage.setItem('data', JSON.stringify(data));
+        this.props.updateList(data);
     }
+
     handleDelete(){
         let data = JSON.parse(localStorage.getItem('data'));
         for (let index = 0; index < data.length; index++) {
             if(this.props.email === data[index].email &&
                 this.props.password === data[index].password){
-
                 data = [
                   ...data.slice(0, index),
                   ...data.slice(index + 1)
                 ];
-                
             }
         }
         localStorage.setItem('data', JSON.stringify(data));
