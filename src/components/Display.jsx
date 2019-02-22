@@ -16,15 +16,19 @@ class Display extends Component {
   }
   
   displayValues(){
-
-   return this.state.data.map((data1, index) =>
-    <DisplayList
-      key = {index}
-      email = {data1.email}
-      password = {data1.password}
-      updateList = {this.updateList}
-       /> 
-    )
+     if(localStorage.length === 0){
+       return false;
+     }else{
+        return this.state.data.map((data1, index) =>
+        <DisplayList
+          key = {index}
+          email = {data1.email}
+          password = {data1.password}
+          updateList = {this.updateList}
+          /> 
+        )
+     }
+    
     
   }
   // This is the method that will be called from the child component.
