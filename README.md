@@ -1,8 +1,8 @@
-# Code-Life
+# Enigma-Assignment
 
-Code-life react multi page application using bootstrap. This project can't be hosted on github because it uses routing. However I decided to host it on my second domain.
+Enigma-Assignment - practical task from company Enigma. 3 page application, that allows you to register, login and display all your accounts. info is stored in local storage.
 
-Live version [here](https://arnasdickus.github.io/travel-site/).
+Live version [here](https://www.itarnas.lt/).
 
 ## Available Scripts
 
