@@ -4,6 +4,14 @@ Enigma-Assignment - practical task from company Enigma. 3 page application, that
 
 Live version [here](https://www.itarnas.lt/).
 
+## Authors
+
+* **Arnas Dickus**
+
+## Acknowledgments
+
+* Thanks to Enigma for providing an assigment.
+
 ## Available Scripts
 
 In the project directory, you can run:
