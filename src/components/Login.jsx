@@ -44,7 +44,7 @@ class Login extends Component {
       }
     }
     if(isSuccessful){
-      alert('login Suceeded');
+      alert('login Success');
     }else{
       alert('login failed');
     }

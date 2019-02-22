@@ -39,7 +39,9 @@ class Display extends Component {
   }
   render() {
     return (
-    <Container>
+      
+    <Container className = "mt-3">
+      <h2>Display</h2>
       <ul className="list-group">
         {this.displayValues()}
       </ul>

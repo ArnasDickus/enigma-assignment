@@ -62,7 +62,12 @@ serviceWorker.unregister();
          2) this.state also adds show: true which it shouldn't do. Slice properties https://medium.freecodecamp.org/lets-clear-up-the-confusion-around-the-slice-splice-split-methods-in-javascript-8ba3266c29ae
          3) Unable to edit button.
          4) Got answer from stack overflow. But it dosen't work as expected. https://stackoverflow.com/questions/54814129/how-to-edit-local-storage-values-react?noredirect=1#comment96406771_54814129
-   6) Added verification for Register.
+   6) Added verification for Register. DONE
+   7) Opening Display with 0 local storage items crash display. Fixed.
+   8) In display add verification. 7
+      8.1) Won't allow change to blank.
+      8.2) Won't allow to name the same way it already exist.
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------

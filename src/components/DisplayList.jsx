@@ -19,8 +19,31 @@ export class DisplayList extends Component {
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+
+        // loginAuthentication
+        this.loginAuthentication = this.loginAuthentication.bind(this);
     }
 
+    loginAuthentication(){
+
+      if(!this.state.email || !this.state.password){
+        alert(`Please fill in the form`);
+        return false;
+      }
+       let data = JSON.parse(localStorage.getItem('data'));
+      for (let index = 0; index < data.length; index++) {
+        // If local storage empty can't compare it
+        if(localStorage.length === 0){
+          return true
+        }else if(this.state.email === data[index].email){
+          alert('This Email already exist');
+          return false
+        }else{
+            return true;
+        } 
+      }
+      return true;
+    }
     onChange(event){
         this.setState({
             [event.target.name]: event.target.value
@@ -34,24 +57,27 @@ export class DisplayList extends Component {
     }
     handleEdit(event){
         event.preventDefault();
-        this.setState({show: false});
-        let data = JSON.parse(localStorage.getItem('data'));
+        if(this.loginAuthentication()){
+          this.setState({show: false});
+          let data = JSON.parse(localStorage.getItem('data'));
 
-        data = data.map((value) => {
-          if(value.email === this.props.email && 
-            value.password === this.props.password){
+          data = data.map((value) => {
+            if(value.email === this.props.email && 
+              value.password === this.props.password){
 
-              return {
-                ...value,
-                email: this.state.email,
-                password: this.state.password,
-              }
-             
-          }
-          return value;
-        })
-        localStorage.setItem('data', JSON.stringify(data));
-        this.props.updateList(data);
+                return {
+                  ...value,
+                  email: this.state.email,
+                  password: this.state.password,
+                }
+              
+            }
+            return value;
+          })
+          localStorage.setItem('data', JSON.stringify(data));
+          this.props.updateList(data);
+        }
+        
     }
 
     handleDelete(){
