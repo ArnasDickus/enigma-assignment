@@ -31,17 +31,12 @@ export class DisplayList extends Component {
         return false;
       }
        let data = JSON.parse(localStorage.getItem('data'));
-      for (let index = 0; index < data.length; index++) {
-        // If local storage empty can't compare it
-        if(localStorage.length === 0){
-          return true
-        }else if(this.state.email === data[index].email){
-          alert('This Email already exist');
-          return false
-        }else{
-            return true;
-        } 
-      }
+        for (let index = 0; index < data.length; index++) {
+          if(this.state.email === data[index].email){
+            alert('This Email already exist');
+            return false;
+          } 
+        }
       return true;
     }
     onChange(event){
