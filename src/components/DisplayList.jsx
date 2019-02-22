@@ -37,12 +37,10 @@ export class DisplayList extends Component {
         this.setState({show: false});
         let data = JSON.parse(localStorage.getItem('data'));
 
-        data.map((value) => {
+        data = data.map((value) => {
           if(value.email === this.props.email && 
             value.password === this.props.password){
-              console.log(value);
-              console.log(this.state.email);
-              console.log(this.state.password);
+
               return {
                 ...value,
                 email: this.state.email,
@@ -50,7 +48,6 @@ export class DisplayList extends Component {
               }
              
           }
-          console.log(value);
           return value;
         })
         localStorage.setItem('data', JSON.stringify(data));
