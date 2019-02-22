@@ -10,7 +10,7 @@ Live version [here](https://www.itarnas.lt/).
 
 ## Acknowledgments
 
-* Thanks to Enigma for providing an assigment.
+* Thanks to Enigma Software Group Lt" for providing an assigment.
 
 ## Available Scripts
 
