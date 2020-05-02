@@ -2,7 +2,6 @@
 
 Enigma-Assignment - practical task from company Enigma. 3 page application, that allows you to register, login and display all your accounts. info is stored in local storage.
 
-Live version [here](https://www.itarnas.lt/).
 
 ## Authors
 
