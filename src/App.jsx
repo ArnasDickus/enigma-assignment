@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 import {HashRouter as Router, Route}  from 'react-router-dom';
-
-
 import CustomNavbar from "./components/CustomNavbar";
-
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
