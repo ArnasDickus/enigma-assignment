@@ -1,7 +1,7 @@
 # Enigma-Assignment
 
 Enigma-Assignment - practical task from company Enigma. 3 page application, that allows you to register, login and display all your accounts. info is stored in local storage.
-[https://arnasdickus.github.io/enigma-assignment/#/](live version)
+[live version](https://arnasdickus.github.io/enigma-assignment/#/)
 
 ## Authors
 
